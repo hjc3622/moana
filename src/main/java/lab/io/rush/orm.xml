@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+    version="1.0">
+    <description>JPA Mapping file for DataNucleus Tutorial with JPA</description>
+    <package>lab.io.rush</package>
+			
+    <entity class="lab.io.rush.model.MovieTicket" name="MovieTicket">
+        <table name="movie_ticket"/>
+        <attributes>
+            <id name="movie_id">
+                <generated-value strategy="AUTO"/>
+            </id>
+            <basic name="name">
+                <column name="name" length="64"/>
+            </basic>
+            	<basic name="number">
+                <column name="number"/>
+            </basic>
+            <basic name="createTime">
+                <column name="create_time"/>
+            </basic>
+            	<basic name="startTime">
+                <column name="start_time"/>
+            </basic>
+            				<basic name="endTime">
+                <column name="end_time"/>
+            </basic>
+            
+        </attributes>
+    </entity>
+  <entity class="lab.io.rush.model.User" name="User">
+        <table name="user"/>
+        <attributes>
+            <id name="user_id">
+                <generated-value strategy="AUTO"/>
+            </id>
+            <basic name="email">
+                <column name="email" length="32"/>
+            </basic>
+            	<basic name="password">
+                <column name="password" length="32"/>
+            </basic>
+            
+        </attributes>
+    </entity>
+    <entity class="lab.io.rush.model.SnapRecord" name="SnapRecord">
+        <table name="snap_record"/>
+        <attributes>
+            <id name="id">
+                <generated-value strategy="AUTO"/>
+            </id>
+            <basic name="u_id">
+                <column name="user_id" />
+            </basic>
+            	<basic name="m_id">
+                <column name="movie_id"/>
+            </basic>
+            <basic name="snapTime">
+                <column name="snap_time"/>
+            </basic>
+            	<basic name="num">
+                <column name="number"/>
+            </basic>
+            
+        </attributes>
+    </entity>
+
+</entity-mappings>
